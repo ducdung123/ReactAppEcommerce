@@ -1,0 +1,94 @@
+@import "../../../Variables.scss";
+.compare {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    display: none;
+    .compare__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .compare__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: 85%;
+        z-index: 11;
+        background-color: $cl-black-0;
+        text-align: center;
+        padding: 20px 30px;
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0;
+        transition: all 0.3s;
+        h1 {
+            color: white;
+            font-size: $fs-1 + .2;
+        }
+        .compare__content__product {
+            margin-top: 30px;
+            // overflow: auto;
+            display: flex;
+            
+            // display: inline-block;
+            .compare__content__product__item {
+                // flex-grow: 2;
+                // flex-basis: 20%;
+                width: 20% ;
+                position: relative;
+                .compare__content__product__item__img {
+                    padding: 30px;
+                    
+                    img {
+                        width: 100%;
+                        cursor: pointer;
+                    }
+                }
+                h5{
+                    color: $cl-gray-3;
+                    font-size: $fs-0 - .4;
+                }
+                h6{
+                    margin-top: 20px;
+                    color: $cl-orange-0;
+                    font-size: $fs-0 - .2;
+                }
+                i{
+                    position: absolute;
+                    top: 0px;
+                    right: 15px;
+                    color: $cl-gray-0;
+                    font-size: $fs-0 - .3;
+                    cursor: pointer;
+                }
+            }
+            .owl-stage{
+                display: flex;
+            }
+            .owl-nav{
+                display: none;
+            } 
+        }
+        .compare__content__close{
+            position: absolute;
+            top: 5%;
+            right: 3%;
+            color: white;
+            font-size: $fs-0 - .1;
+            cursor: pointer;
+            transition: all .3s;
+            &:hover {
+                color: $cl-orange-0;
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

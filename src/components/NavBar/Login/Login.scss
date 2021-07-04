@@ -1,0 +1,144 @@
+@import "../../../Variables.scss";
+.navbar--icon__account__login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    .navbar--icon__account__login__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .navbar--icon__account__login__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0;
+        z-index: 5;
+        // height: 90%;
+        background-color: $cl-white-1;
+        text-align: center;
+        padding: $pd-7;
+        width: 450px;
+        transition: all 0.3s;
+        h3 {
+            font-weight: 400;
+            font-size: $fs-1 + 0.2;
+            margin-bottom: 50px;
+        }
+        input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            outline: none;
+            border: 0.5px solid rgba(128, 128, 128, 0.2);
+            color: gray;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            &:focus {
+                border-color: gray;
+            }
+            &::placeholder {
+                color: gray;
+            }
+            
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            outline: none;
+            border: 1px solid $cl-orange-0;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+            font-size: $fs-0 - 0.3;
+            // margin: 40px 0;
+            &:nth-of-type(1) {
+                background-color: $cl-orange-0;
+                color: $cl-white-1;
+                margin-top: 50px;
+                &:hover {
+                    background-color: transparent;
+                    color: $cl-orange-0;
+                }
+            }
+            &:nth-of-type(2) {
+                background-color: transparent;
+                color: $cl-orange-0;
+                margin-top: 20px;
+
+                &:hover {
+                    background-color: $cl-orange-0;
+                    color: $cl-white-1;
+                }
+            }
+        }
+        i {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            font-size: $fs-0;
+        }
+    }
+}
+.navbar--icon__account{
+    position: relative;
+    z-index: 1;
+}
+.navbar--icon__account__user{
+    position: absolute;
+    top: 30px;
+    background-color: white;
+    left: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px -10px 20px 0px rgba(0, 0, 0, .2) inset;
+    text-align: center;
+    min-width: 100px;
+    &:after{
+        position: absolute;
+        top: -4px;
+        left: 8px;
+        content: "";
+        background-color: white;
+        width: 10px;
+        height: 10px;
+        transform: rotate(45deg);
+    }
+    h5{
+        font-size: $fs-0 - .3;
+        font-weight: 500;
+    }
+    >div{
+        cursor: pointer;
+        transition: all .3s;
+        
+        &:hover{
+            color: $cl-orange-0;
+            transform: translateY(-5px);
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .navbar--icon__account__login{
+        .navbar--icon__account__login__content{
+            width: 350px;
+        }
+    }
+}
+@media screen and (max-width: 992px) {
+    .navbar--icon__account__user{
+        left: unset;
+        right: 10px;
+        &:after{
+            left: unset;
+            right: 8px;
+        }
+    }
+}

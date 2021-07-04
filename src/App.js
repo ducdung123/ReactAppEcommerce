@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useCallback, useEffect, useState } from 'react'
+import './App.scss';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink
+} from "react-router-dom";
+import NavBar from './components/NavBar/NavBar';
+import BackToTop from './components/BackToTop/BackToTop';
+import Footer from './components/Footer/Footer';
+import routes from './route';
 function App() {
+  let RenderContent = (routes) => {
+    let result = null;
+    if (routes.length > 0) {
+      result = routes.map((value, index) => {
+        return (
+          <Route
+            key={index}
+            path={value.path}
+            exact={value.exact}
+            component={value.main}
+          />
+        );
+      })
+    }
+    return result;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <NavBar />
+      <Switch>
+        {RenderContent(routes)}
+      </Switch>
+      <Footer />
+      <BackToTop />
+    </Router>
+
+  )
 }
+
 
 export default App;

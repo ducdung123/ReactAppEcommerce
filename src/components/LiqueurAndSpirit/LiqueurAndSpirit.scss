@@ -1,0 +1,286 @@
+@import "../../Variables.scss";
+.liqueur-and-spirit {
+    text-align: center;
+    padding: 0 $pd-5 70px $pd-5;
+    > h1 {
+        color: $cl-white-1;
+        font-weight: 400;
+        font-size: $fs-2 + 0.3;
+        margin: 0;
+    }
+    > p {
+        color: $cl-white-0;
+        width: 50%;
+        margin: 20px auto;
+        font-size: $fs-0 - 0.3;
+        @media screen and (max-width: 992px) {
+            width: 70%;
+        }
+    }
+    .liqueur-and-spirit__content {
+        margin: 0;
+        margin-top: 50px;
+        border: 10px solid $cl-black-2;
+        > .row {
+            margin: 0;
+            .liqueur-and-spirit__content__item {
+                padding: 40px 0px;
+                p {
+                    margin: 0;
+                    margin-top: 30px;
+                    color: $cl-white-0;
+                    font-size: $fs-0 - 0.3;
+                }
+            }
+        }
+    }
+    .liqueur-and-spirit__img {
+        margin-top: 80px;
+        > .row > div {
+            padding: 0;
+            &:nth-of-type(1) {
+                padding-right: $pd-2;
+                position: relative;
+                overflow: hidden;
+            }
+            &:nth-of-type(2) {
+                padding-left: $pd-2;
+                position: relative;
+                overflow: hidden;
+            }
+        }
+
+        p {
+            color: $cl-white-2;
+            font-size: $fs-0 - 0.3;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin: 0;
+        }
+        h1 {
+            color: $cl-white-2;
+
+            font-weight: 400;
+            font-size: $fs-2 + 0.4;
+            letter-spacing: 1px;
+        }
+        button {
+            padding: 15px 30px;
+            background-color: transparent;
+            color: $cl-white-2;
+            border: 0.5px solid $cl-white-2;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            &:hover {
+                background-color: $cl-orange-0;
+                border-color: $cl-orange-0;
+            }
+        }
+        .liqueur-and-spirit__img__left {
+            text-align: center;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            .liqueur-and-spirit__img__count {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 30px;
+                .liqueur-and-spirit__img__count__item {
+                    padding: 10px 0;
+                    background-color: white;
+                    width: 22%;
+                    p {
+                        font-size: $fs-0 - 0.4;
+                        color: $cl-gray-3;
+                        letter-spacing: 0;
+                        margin: 0px;
+                    }
+                    h3 {
+                        font-size: $fs-2 + 0.2;
+                        color: rgba(0, 0, 0, 0.8);
+                        font-weight: 400;
+                        letter-spacing: 2px;
+                        margin: 0px;
+                    }
+                }
+            }
+            > div {
+                width: 80%;
+            }
+            button {
+                margin-top: 50px;
+            }
+            &:hover {
+                filter: contrast(1.1);
+            }
+        }
+        .liqueur-and-spirit__img__left--overlay {
+            position: absolute;
+            background-color: $cl-black-0;
+            width: calc(100% - 15px);
+            height: 50%;
+            top: 0;
+            left: 0;
+            transition: all .5s;
+            // transform: translate(-100%);
+        }
+        .liqueur-and-spirit__img__right {
+            .liqueur-and-spirit__img__right__top {
+                height: calc((100vh - 30px) / 2);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                padding-left: 60px;
+                transition: all 0.2s;
+                > div {
+                    width: 55%;
+                    text-align: left;
+                }
+                h3 {
+                    color: $cl-white-2;
+                    font-weight: 400;
+                }
+                h6 {
+                    color: $cl-white-0;
+                    font-weight: 400;
+                    font-size: $fs-0 - 0.3;
+                    margin: 20px 0;
+                }
+                &:hover {
+                    filter: contrast(1.1);
+                }
+            }
+            .liqueur-and-spirit__img__right__bottom {
+                margin-top: 30px;
+                .row {
+                    > div {
+                        padding: 0;
+                        &:nth-of-type(1) {
+                            padding-right: 15px;
+                        }
+                        &:nth-of-type(2) {
+                            padding-left: 15px;
+                        }
+                        .liqueur-and-spirit__img__right__bottom__item {
+                            height: calc((100vh - 30px) / 2);
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;
+                            display: flex;
+                            align-items: center;
+                            padding-left: 30px;
+                            transition: all 0.2s;
+                            > div {
+                                text-align: left;
+                            }
+                            h1 {
+                                margin-bottom: 20px;
+                            }
+                            &:hover {
+                                filter: contrast(1.1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .liqueur-and-spirit__img__right--overlay{
+            position: absolute;
+            background-color: $cl-black-0;
+            width: 30%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            transition: all .5s;
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .liqueur-and-spirit {
+        padding: 0 10px 50px 10px;
+        > h1 {
+            font-size: $fs-1;
+        }
+        > p {
+            width: 90%;
+            font-size: $fs-0 - 0.5;
+        }
+        .liqueur-and-spirit__content {
+            > .row {
+                .liqueur-and-spirit__content__item {
+                    padding: 20px 0;
+                }
+            }
+        }
+        .liqueur-and-spirit__img .liqueur-and-spirit__img__right .liqueur-and-spirit__img__right__top {
+            height: 90vh;
+            padding-left: 30px;
+        }
+    }
+}
+@media screen and (max-width: 992px) {
+    .liqueur-and-spirit {
+        .liqueur-and-spirit__img {
+            > .row > div {
+                &:nth-of-type(1) {
+                    padding-right: 0;
+                }
+                &:nth-of-type(2) {
+                    padding-left: 0;
+                }
+            }
+            .liqueur-and-spirit__img__left {
+                .liqueur-and-spirit__img__count {
+                    width: 80%;
+                    margin: 30px auto 0 auto;
+                    .liqueur-and-spirit__img__count__item {
+                        padding: 5px 0;
+                        p {
+                            font-size: $fs-0 - 0.6;
+                        }
+                        h3 {
+                            font-size: $fs-1;
+                        }
+                    }
+                }
+            }
+            .liqueur-and-spirit__img__left--overlay{
+                width: 100%;
+            }
+            .liqueur-and-spirit__img__right .liqueur-and-spirit__img__right__top {
+                margin-top: 30px;
+                > div {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .liqueur-and-spirit {
+        .liqueur-and-spirit__img {
+            .liqueur-and-spirit__img__right .liqueur-and-spirit__img__right__bottom {
+                .row {
+                    > div:nth-of-type(1) {
+                        padding: 0;
+                    }
+                    > div:nth-of-type(2) {
+                        margin-top: 30px;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}

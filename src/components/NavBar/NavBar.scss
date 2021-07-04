@@ -1,0 +1,203 @@
+@import "../../Variables.scss";
+.navbar--config {
+    display: flex;
+    align-items: center;
+    background-color: $cl-black-0;
+    padding: 0 $pd-6;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    transition: all .3s;
+    transform: translateY(0);
+    border-bottom: 1px solid $cl-gray-2;
+    &.onscroll{
+        transform: translateY(-100%);
+    }
+}
+.navbar-brand {
+    padding: 0;
+    margin-right: 80px;
+    img {
+        max-width: 78px;
+    }
+}
+.navbar__content {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+    li {
+        list-style: none;
+        padding: $pd-6 $pd-4;
+        a {
+            color: $cl-white-0;
+            padding: 0;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -3px;
+                left: 50%;
+                width: 0;
+                height: 1px;
+                background-color: $cl-orange-0;
+                transform: translateX(-50%);
+                transition: all 0.3s;
+            }
+            &:hover {
+                color: $cl-orange-0;
+                &::after {
+                    width: 105%;
+                }
+            }
+            &:focus {
+                color: $cl-orange-0;
+            }
+            
+        }
+        &.active{
+            a{
+                color: $cl-orange-0;
+            }
+            
+        }
+    }
+}
+.navbar__icon {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    i {
+        color: $cl-white-0;
+        padding: 0 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+            color: $cl-orange-0;
+        }
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .navbar__content {
+        li {
+            padding: $pd-6 $pd-2;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .navbar-brand {
+        // padding: 20px 0;
+        margin-right: 0px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .navbar__content {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        background-color: $cl-white-2;
+        left: 0;
+        height: 100vh;
+        padding: 30px 40px;
+        opacity: 0;
+        transform: translateX(-100%);
+        overflow: hidden;
+        transition: all .8s;
+        li {
+            padding: 15px 0;
+            a {
+                color: black;
+                text-align: center;
+                letter-spacing: 2px;
+                font-weight: 500;
+                &::after {
+                    bottom: -15px;
+                }
+                &:hover {
+                    color: $cl-orange-0;
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .navbar--config {
+        height: 70px;
+        padding: 0 $pd-2;
+    }
+}
+
+.navbar-menu-icon-res {
+    cursor: pointer;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    overflow: hidden;
+    > div {
+        position: absolute;
+        height: 3px;
+        width: 70%;
+        background-color: #cebaa4;
+        transition: all 0.3s;
+        border-radius: 10px;
+        left: 10%;
+        &:first-of-type {
+            top: 48%;
+            transform: rotate(45deg);
+        }
+        &:nth-of-type(2) {
+            top: 48%;
+            transform: translateX(150%);
+        }
+        &:nth-of-type(3) {
+            top: 48%;
+            transform: rotate(-45deg);
+        }
+    }
+    &.hide {
+        > div {
+            &:first-of-type {
+                top: 28%;
+                transform: none;
+            }
+            &:nth-of-type(2) {
+                top: 48%;
+                transform: none;
+            }
+            &:nth-of-type(3) {
+                top: 68%;
+                transform: none;
+            }
+        }
+    }
+}
+.navbar__icon__res{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100vw;
+    background-color: $cl-white-2;
+    //height: 100px;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0px;
+    z-index: 1;
+    i{
+        font-size: $fs-0 - .2;
+        padding: 10px;
+        cursor: pointer;
+        color: $cl-gray-0;
+        transition: all .2s;
+        &:hover{
+            color: $cl-orange-0;
+            transform: translateY(-5px);
+        }
+    }
+}

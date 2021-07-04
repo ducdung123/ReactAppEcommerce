@@ -1,0 +1,223 @@
+@import "../../Variables.scss";
+.productview {
+    padding: 15vh 30px;
+    .productview__content {
+        margin-top: 50px;
+        .row {
+            margin: 0;
+            > div {
+                padding: 0;
+            }
+        }
+        .productview__content__img {
+            display: flex;
+            justify-content: space-between;
+            height: 120vh;
+            > img {
+                width: 130px;
+                height: 180px;
+                object-fit: cover;
+                border: 1px solid white;
+            }
+            .productview__content__img__tohover {
+                width: 77%;
+                height: 100%;
+                overflow: hidden;
+                // background-image: url("http://localhost:3000/img/Dry-Vineyard-Sauvignon.png");
+                background-size: 580px;
+                background-repeat: no-repeat;
+                background-position: center;
+                transition: border 0.3s, background-size 0.2s, background-position 0s;
+                border: 1px solid $cl-gray-3;
+                &:hover + .cursor {
+                    display: block;
+                    transform: scale(5);
+                }
+            }
+            .cursor {
+                display: none;
+                position: fixed;
+                width: 20px;
+                height: 20px;
+                background-color: transparent;
+                box-shadow: 0px 0px 2px 1px rgba(255, 255, 255, 0.5);
+                border-radius: 50%;
+                pointer-events: none;
+                mix-blend-mode: difference;
+            }
+        }
+        .productview__content__infor {
+            padding-left: 40px;
+            margin-top: 100px;
+            h1 {
+                color: $cl-white-1;
+                font-weight: 400;
+                font-size: $fs-0 + 0.2;
+                letter-spacing: 1px;
+            }
+            .productview__content__infor__star {
+                margin: 20px 0 10px 0;
+                i {
+                    color: rgba(255, 255, 0, 0.8);
+                    font-size: $fs-0 - 0.7;
+                    margin-right: 3px;
+                }
+            }
+            h3 {
+                font-size: $fs-0;
+                font-weight: 400;
+                color: $cl-orange-0;
+            }
+            .productview__content__infor__add {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 30px;
+                .productview__content__infor__add__number {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border: 1px solid $cl-white-0;
+                    input {
+                        //margin: 0;
+                        border: none;
+                        outline: none;
+                        width: 60px;
+                        text-align: center;
+                        color: white;
+                        background-color: transparent;
+                        font-size: $fs-0 - 0.2;
+                    }
+                    i {
+                        padding: 20px;
+                        font-size: $fs-0 - 0.6;
+                        color: $cl-white-0;
+                        cursor: pointer;
+                        &:hover {
+                            color: $cl-white-0;
+                            background-color: $cl-gray-3;
+                        }
+                        &:nth-of-type(1) {
+                            border-right: 1px solid $cl-white-0;
+                        }
+                        &:nth-of-type(2) {
+                            border-left: 1px solid $cl-white-0;
+                        }
+                    }
+                }
+                > button {
+                    display: inline-block;
+                    width: 40%;
+                    border: 1px solid transparent;
+                    padding: 14px 0;
+                    color: white;
+                    background-color: $cl-orange-0;
+                    font-size: $fs-0 - 0.4;
+                    transition: all 0.3s;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    &:hover {
+                        background-color: $cl-white-0;
+                    }
+                }
+                > i {
+                    display: inline-block;
+                    margin-left: 50px;
+                    width: 53px;
+                    height: 53px;
+                    border: 1px solid #cebaa4;
+                    line-height: 50px;
+                    text-align: center;
+                    color: $cl-white-0;
+                    transition: all 0.3s;
+                    cursor: pointer;
+                    font-size: $fs-0 - 0.2;
+                    &:hover {
+                        background-color: $cl-orange-0;
+                        color: white;
+                    }
+                    &.active {
+                        background-color: $cl-orange-0;
+                        color: white;
+                    }
+                }
+            }
+            .productview__content__infor__cart {
+                margin-top: $mg-3;
+                width: 100%;
+                border: 1px solid #cebaa4;
+                padding: $pd-2;
+                color: #c27b43;
+
+                background: linear-gradient(90deg, $cl-orange-0 50%, transparent 50%);
+                background-size: 0px 100%;
+                font-size: $fs-0 - 0.1;
+                background-repeat: no-repeat;
+                // position: relative;
+                transition: all 0.3s;
+                &:hover {
+                    color: white;
+                    background-size: 200% 100%;
+                    border-color: $cl-orange-0;
+                }
+            }
+            > p {
+                color: $cl-gray-3;
+                margin-top: 50px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    .productview {
+        .productview__content {
+            .productview__content__infor {
+                padding: 0;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .productview {
+        padding: 15vh 15px 10vh 15px;
+        .productview__content {
+            .productview__content__img {
+                flex-direction: column;
+                align-items: center;
+                height: 110vh;
+                > img {
+                    order: 2;
+                    width: 100px;
+                    height: 150px;
+                    margin-top: 30px;
+                }
+                .productview__content__img__tohover {
+                    order: 1;
+                    width: 100%;
+                    background-size: 460px;
+                }
+            }
+            .productview__content__infor{
+                margin-top: 30px;
+                text-align: center;
+                .productview__content__infor__add{
+                    .productview__content__infor__add__number{
+                        i {
+                            padding: 20px 15px;
+                            font-size: $fs-0 - 0.6;
+                            color: $cl-white-0;
+                            cursor: pointer;
+                            
+                        }
+                        input{
+                            width: 40px;
+                        }
+                    }
+                    > i{
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

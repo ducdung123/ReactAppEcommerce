@@ -1,0 +1,115 @@
+@import "../../../Variables.scss";
+.quickview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    display: none;
+    .quickview__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .quickview__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 85%;
+        z-index: 11;
+        background-color: $cl-black-0;
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0;
+        transition: all 0.3s;
+        .row {
+            margin: 0;
+            > div {
+                padding: 0;
+
+                img {
+                    // height: 100%;
+                    width: 100%;
+                }
+            }
+            .quickview__content__infor {
+                padding: 120px 50px;
+                h3 {
+                    color: $cl-white-2;
+                    font-weight: 400;
+                    font-size: $fs-0 + 0.1;
+                    letter-spacing: 1px;
+                }
+                h6 {
+                    color: $cl-orange-0;
+                    font-size: $fs-0 - 0.2;
+                    font-weight: 400;
+                    margin: 10px 0 20px 0;
+                }
+                p {
+                    color: $cl-gray-3;
+                    font-size: $fs-0 - 0.4;
+                    line-height: 25px;
+                }
+                button {
+                    display: inline-block;
+                    margin-top: 20px;
+                    border: 1px solid #cebaa4;
+                    padding: $pd-1 $pd-5;
+                    color: #c27b43;
+                    background: linear-gradient(90deg, $cl-orange-0 50%, transparent 50%);
+                    background-size: 0px 100%;
+                    font-size: $fs-0 - 0.1;
+                    background-repeat: no-repeat;
+                    // position: relative;
+                    transition: all 0.3s;
+                    
+                    &:hover {
+                        color: white;
+                        background-size: 200% 100%;
+                        border-color: $cl-orange-0;
+                    }
+                }
+                i{
+                    display: inline-block;
+                    margin-left: 50px;
+                    width: 53px;
+                    height: 53px;
+                    border: 1px solid #cebaa4;
+                    line-height: 50px;
+                    text-align: center;
+                    color: $cl-white-0;
+                    transition: all .3s;
+                    cursor: pointer;
+                    font-size: $fs-0 - .2;
+                    &:hover {
+                        background-color: $cl-orange-0;
+                        color: white;
+                    }
+                    &.active{
+                        background-color: $cl-orange-0;
+                        color: white;
+                    }
+                }
+            }
+        }
+        .quickview__content__close{
+            position: absolute;
+            top: 5%;
+            right: 3%;
+            color: white;
+            font-size: $fs-0 - .1;
+            cursor: pointer;
+            transition: all .3s;
+            &:hover {
+                color: $cl-orange-0;
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

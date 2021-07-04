@@ -1,0 +1,14 @@
+.listproducts__content{
+    .owl-stage{
+        display: flex;
+        .owl-item:nth-of-type(1), .owl-item:nth-of-type(18){
+            display: none;
+        }
+    }
+    .owl-nav{
+        display: none;
+    }
+    // .owl-dots{
+    //     display: none;
+    // }
+}

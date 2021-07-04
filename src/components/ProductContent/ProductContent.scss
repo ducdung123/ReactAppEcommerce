@@ -1,0 +1,97 @@
+@import "../../Variables.scss";
+.product-content {
+    // margin-top: 120px;
+    //position: relative;
+    //top: 15vh;
+    //left: 0px;
+    //height: 205vh;
+    padding-top: 15vh;
+    width: 100%;
+    .row {
+        //height: 100%;
+        margin: 0;
+    }
+    .product-content__item {
+        position: relative;
+        height: 530px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        .product-content__item__img {
+            height: 100%;
+            // width: 100%;
+
+            filter: grayscale(100%);
+
+            transition: all 0.5s;
+        }
+        .product-content__item__infor {
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            h3 {
+                color: white;
+                font-size: $fs-2 + 0.3;
+                font-weight: 400;
+                letter-spacing: 1px;
+            }
+        }
+
+        &:hover {
+            .product-content__item__img {
+                filter: none;
+                transform: scale(1.1);
+            }
+        }
+        &:nth-of-type(1) {
+            .product-content__item__img {
+                background: url("https://cdn.shopify.com/s/files/1/0342/2686/4266/files/brian-jones_360x.jpg?v=1615533689");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+        &:nth-of-type(2) {
+            .product-content__item__img {
+                background: url("https://cdn.shopify.com/s/files/1/0342/2686/4266/files/joseph-costa_360x.jpg?v=1615533689");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+        &:nth-of-type(3) {
+            .product-content__item__img {
+                background: url("https://cdn.shopify.com/s/files/1/0342/2686/4266/files/ratheesh-chandran_360x.jpg?v=1615533689");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+        &:nth-of-type(4) {
+            .product-content__item__img {
+                background: url("https://cdn.shopify.com/s/files/1/0342/2686/4266/files/two-elegant_360x.jpg?v=1615533689");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}
+@media screen and (max-width: 992px) {
+    .product-content{
+        padding-top: 11vh;
+        .product-content__item{
+            height: 400px;
+            .product-content__item__infor {
+                h3 {
+                    font-size: $fs-1; 
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .product-content{
+        padding-top: 9vh;   
+    }
+}

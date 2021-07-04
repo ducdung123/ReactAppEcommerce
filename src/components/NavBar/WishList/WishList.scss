@@ -1,0 +1,147 @@
+@import "../../../Variables.scss";
+.navbar--icon__wishlist__product {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    display: none;
+    .navbar--icon__wishlist__product__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .navbar--icon__wishlist__product__content {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 35%;
+        height: 100%;
+        background-color: white;
+        z-index: 2;
+        transform: translateX(100%);
+        transition: all .3s;
+        
+        h4{
+            padding: $pd-4 $pd-7;
+            background-color: $cl-white-2;
+            font-size: $fs-0 - .2;
+            font-weight: 400;
+            color: rgba(0, 0, 0, .8);
+            margin: 0;
+        }
+        .wishlist__product__content__list{
+            padding: 0 $pd-7;
+            padding-bottom: 80px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            // width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+            }
+            >div{
+                position: relative;
+                padding: $pd-3 0;
+                border-bottom: 1px solid rgba(128, 128, 128,.2);
+                .wishlist__product__content__list__infor{
+                    padding-top: 5px;
+                    h5{
+                        font-size: $fs-0 - .4;
+                        color: $cl-white-0;
+                        // margin-bottom: 10px;
+                        font-weight: 400;
+                    }
+                    h3{
+                        
+                        font-size: $fs-0 - .3;
+                        color: $cl-orange-0;
+                    }
+                    button{
+                        margin-top: 10px;
+                        border: none;
+                        padding: 10px 25px;
+                        background-color: $cl-orange-0;
+                        color: $cl-white-1;
+                        font-weight: 500;
+                        transition: all .3s;
+                        &:hover{
+                            background-color: rgba(194, 123, 67, .5);
+                        }
+                    }
+                }
+                i{
+                    position: absolute;
+                    top: $pd-3 + 5px;
+                    right: -90%;
+                    font-size: $fs-0 - .2;
+                }
+            }
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+            &::-webkit-scrollbar-track {
+                background: $cl-white-2;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #c1c4c4;
+                border-radius: 5px;
+                
+            }
+            
+            
+        }
+    }
+}
+.navbar--icon__wishlist{
+    position: relative;
+    .navbar--icon__wishlist__note{
+        position: absolute;
+        top: -2px;
+        left: 58%;
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        border-radius: 50%;
+        font-size: $fs-0 - .7;
+        color: rgba(255, 255, 255, .8);
+        background-color: $cl-orange-0;
+
+    }
+}
+@media screen and (max-width: 992px) {
+    .navbar--icon__wishlist__product{
+        .navbar--icon__wishlist__product__content {
+            width: 50%;
+        } 
+    }
+}
+@media screen and (max-width: 768px) {
+    .navbar--icon__wishlist__product{
+        .navbar--icon__wishlist__product__content {
+            width: 75%;
+           
+        } 
+    }
+}
+@media screen and (max-width: 576px) {
+    .navbar--icon__wishlist__product{
+        .navbar--icon__wishlist__product__content {
+            
+            .wishlist__product__content__list{
+                padding: 0 25px;
+                padding-bottom: 80px;
+                >div .wishlist__product__content__list__infor{
+                    button{
+                        padding: 10px;
+                    }
+                }
+            }
+        } 
+    }
+}
+

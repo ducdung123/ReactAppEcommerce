@@ -1,0 +1,255 @@
+@import "../../Variables.scss";
+.cart {
+    padding: 15vh 30px;
+    > h1 {
+        text-align: center;
+        color: $cl-white-2;
+        margin-top: 30px;
+        font-weight: 400;
+        font-size: $fs-2 - 0.2;
+        letter-spacing: 1px;
+    }
+    .cart__content {
+        margin-top: 50px;
+        table {
+            width: 100%;
+            // border: 1px solid white;
+            color: $cl-white-2;
+            tr {
+                border-bottom: 1px solid $cl-white-0;
+                position: relative;
+                // padding: 20px 0;
+                th {
+                    font-weight: 400;
+                    font-size: $fs-0 - 0.5;
+                    letter-spacing: 1px;
+                    padding: 10px 0;
+                    &:nth-of-type(1),
+                    &:nth-of-type(2) {
+                        width: 30%;
+                    }
+                    &:nth-of-type(3) {
+                        width: 23%;
+                    }
+                }
+                td {
+                    padding: 20px 0;
+                    &:nth-of-type(1) {
+                        display: flex;
+                        align-items: center;
+                        img {
+                            width: 70px;
+                            height: 90px;
+                        }
+                        > div {
+                            margin-left: 30px;
+                            p {
+                                margin: 0px;
+                            }
+                            i {
+                                color: rgba(255, 255, 0, 0.8);
+                                font-size: $fs-0 - 0.7;
+                                margin-right: 3px;
+                            }
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        color: $cl-gray-3;
+                    }
+                    // .cart__content__number {
+                    //     display: flex;
+                    //     align-items: center;
+                    //     justify-content: space-between;
+                    //     border: 1px solid $cl-white-0;
+                    //     width: 45%;
+                    //     input {
+                    //         //margin: 0;
+                    //         border: none;
+                    //         outline: none;
+                    //         width: 40px;
+                    //         text-align: center;
+                    //         color: white;
+                    //         background-color: transparent;
+                    //         font-size: $fs-0 - 0.2;
+                    //     }
+                    //     i {
+                    //         padding: 15px;
+                    //         font-size: $fs-0 - 0.6;
+                    //         color: $cl-white-0;
+                    //         cursor: pointer;
+                    //         &:hover {
+                    //             color: $cl-white-0;
+                    //             background-color: $cl-gray-3;
+                    //         }
+                    //         &:nth-of-type(1) {
+                    //             border-right: 1px solid $cl-white-0;
+                    //         }
+                    //         &:nth-of-type(2) {
+                    //             border-left: 1px solid $cl-white-0;
+                    //         }
+                    //     }
+                    // }
+                    &:nth-of-type(5) {
+                        i {
+                            color: $cl-white-0;
+                            cursor: pointer;
+                            transition: all 0.2s;
+                            &:hover {
+                                color: $cl-orange-0;
+                            }
+                        }
+                    }
+                }
+                &:last-of-type {
+                    border: none;
+                    td {
+                        color: $cl-orange-0;
+                        font-size: $fs-0 - 0.2;
+                        &:nth-of-type(3) {
+                            font-size: $fs-0;
+                            vertical-align: top;
+                        }
+                        button {
+                            display: block;
+                            margin-top: 30px;
+                            border: 1px solid transparent;
+                            padding: 14px 0px;
+                            width: 80%;
+                            margin-left: -40px;
+                            color: white;
+                            background-color: $cl-orange-0;
+                            font-size: $fs-0 - 0.4;
+                            transition: all 0.3s;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                            &:hover {
+                                background-color: $cl-white-0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .cart__content__number {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid $cl-white-0;
+        width: 45%;
+        input {
+            //margin: 0;
+            border: none;
+            outline: none;
+            width: 40px;
+            text-align: center;
+            color: white;
+            background-color: transparent;
+            font-size: $fs-0 - 0.2;
+        }
+        i {
+            padding: 15px;
+            font-size: $fs-0 - 0.6;
+            color: $cl-white-0;
+            cursor: pointer;
+            &:hover {
+                color: $cl-white-0;
+                background-color: $cl-gray-3;
+            }
+            &:nth-of-type(1) {
+                border-right: 1px solid $cl-white-0;
+            }
+            &:nth-of-type(2) {
+                border-left: 1px solid $cl-white-0;
+            }
+        }
+    }
+    .cart__subtotal {
+        > div {
+            display: flex;
+            justify-content: space-between;
+            h3 {
+                color: $cl-orange-0;
+                font-weight: 400;
+            }
+        }
+        button {
+            display: block;
+            margin-top: 30px;
+            border: 1px solid transparent;
+            padding: 14px 0px;
+            width: 40%;
+            margin-left: auto;
+            color: white;
+            background-color: $cl-orange-0;
+            font-size: $fs-0 - 0.4;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            &:hover {
+                background-color: $cl-white-0;
+            }
+        }
+    }
+}
+.cart__content__item__loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart__content__res {
+    margin-bottom: 20px;
+    > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border: 1px solid white;
+        .cart__content__res__title {
+            font-size: $fs-0 - 0.4;
+            color: $cl-gray-3;
+        }
+        &:nth-of-type(1) {
+            img {
+                width: 70px;
+                height: 90px;
+                margin-bottom: 10px;
+            }
+            > div {
+                p {
+                    margin: 0px;
+                    color: $cl-orange-0;
+                }
+                i {
+                    color: rgba(255, 255, 0, 0.8);
+                    font-size: $fs-0 - 0.7;
+                    margin-right: 3px;
+                }
+            }
+        }
+        i {
+            cursor: pointer;
+        }
+        .cart__content__res__text {
+            color: $cl-white-2;
+        }
+        > div {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .cart {
+        .cart__content__number {
+            width: 100%;
+        }
+    }
+}
